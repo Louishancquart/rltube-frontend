@@ -1,0 +1,78 @@
+{ "rely-api":
+[
+  {
+    "id":"7",
+    "type":"CONTROVERSIAL",
+    "reviewedMediaUrl":"65660684",
+    "referenceUrl":"http://dl.dropbox.com/u/65660684/640px-Carnival_Puppets.jpg",
+    "reviewedTimes":"289",
+    "description":"Description CONTROVERSIAL."
+  },
+  {
+    "id":"8",
+    "type":"CONTROVERSIAL",
+    "reviewedMediaUrl":"sdf60684",
+    "referenceUrl":"http://dl.dropbox.com/u/65660684/640px-Carnival_Puppets.jpg",
+    "reviewedTimes":"493",
+    "description":"Description CONTROVERSIAL.."
+  },
+  {
+    "id":"9",
+    "type":"CONTROVERSIAL",
+    "reviewedMediaUrl":"65660684",
+    "referenceUrl":"http://dl.dropbox.com/u/65660684/640px-Carnival_Puppets.jpg",
+    "reviewedTimes":"292",
+    "description":"Description CONTROVERSIAL.."
+  },
+  {
+    "id":"4",
+    "type":"NEGATIVE",
+    "reviewedMediaUrl":"65660684",
+    "referenceUrl":"http://dl.dropbox.com/u/65660684/640px-Carnival_Puppets.jpg",
+    "reviewedTimes":"132",
+    "description":"Description NEGATIVE.."
+  },
+  {
+    "id":"5",
+    "type":"NEGATIVE",
+    "reviewedMediaUrl":"65sdf0684",
+    "referenceUrl":"http://dl.dropbox.com/u/65660684/640px-Carnival_Puppets.jpg",
+    "reviewedTimes":"396",
+    "description":"Description NEGATIVE.."
+  },
+  {
+    "id":"6",
+    "type":"NEGATIVE",
+    "reviewedMediaUrl":"65660684",
+    "referenceUrl":"http://dl.dropbox.com/u/65660684/640px-Carnival_Puppets.jpg",
+    "reviewedTimes":"338",
+    "description":"Description NEGATIVE.."
+  },
+  {
+    "id":"1",
+    "type":"POSITIVE",
+    "reviewedMediaUrl":"65660684",
+    "referenceUrl":"http://dl.dropbox.com/u/65660684/640px-Carnival_Puppets.jpg",
+    "reviewedTimes":"164",
+    "description":"Description POSITIVE"
+  },
+  {
+    "id":"2",
+    "type":"POSITIVE",
+    "reviewedMediaUrl":"65660684",
+    "referenceUrl":"http://dl.dropbox.com/u/65660684/640px-Carnival_Puppets.jpg",
+    "reviewedTimes":"186",
+    "description":"Description POSITIVE"
+  },
+  {
+    "id":"3",
+    "type":"POSITIVE",
+    "reviewedMediaUrl":"65660684",
+    "referenceUrl":"http://dl.dropbox.com/u/65660684/640px-Carnival_Puppets.jpg",
+    "reviewedTimes":"283",
+    "description":"Description POSITIVE",
+  }
+]
+}
+
+

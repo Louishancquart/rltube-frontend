@@ -1,0 +1,154 @@
+<div class="box">
+
+    <!--<a routerLink="/reviews">-->
+    <a>
+        <div class="video-title">
+            Reviews
+        </div>
+    </a>
+    <br>
+
+
+    <md-tab-group>
+        <md-tab label="Positives">
+                <div>
+                    <progress class="progress  is-primary" id="progress-true" value="{{ positiveRelevancePercentage }}" max="100">{{ positiveRelevancePercentage }}%</progress>
+                    <br>
+                </div>
+
+                <div class="event-timeline">
+                    <ul>
+                        <li *ngFor="let r of positiveReviewList;">
+
+
+                            <p class="event-item">
+                                <small>{{ r.reviewedTimes }}</small>
+                                <!-- TODO: add a times checked document -->
+                                <span class="icon-item-type"><i class="fa fa-star"></i></span>
+                                <a href="{{r.referenceUrl}}">{{r.description}}</a> shared by
+                                <a href="#">Anonymous</a>
+
+                                <!-- TODO: add users and username -->
+                                <small>1 hours ago</small>
+                                <!-- TODO: add a formatted date -->
+                            </p>
+
+                            <!--<button class="delete" (click)="delete(doc); $event.stopPropagation()">x</button>-->
+                        </li>
+                    </ul>
+
+                </div>
+
+
+        </md-tab>
+
+
+        <md-tab label="Controversials">
+            <div>
+                <progress class="progress is-warning"  id="progress-soso" value="{{ controversialRelevancePercentage }}" max="100">{{ controversialRelevancePercentage }}%</progress>
+                <br>
+            </div>
+            <div class="container">
+                <div class="event-timeline">
+
+                    <ul>
+                        <li *ngFor="let r of controversialReviewList;">
+                            <p class="event-item">
+                                <small>{{ r.reviewedTimes }}</small>
+                                <!-- TODO: add a times checked document -->
+                                <span class="icon-item-type"><i class="fa fa-star"></i></span>
+                                <a href="{{r.referenceUrl}}">{{r.description}}</a> shared by
+                                <a href="#">Anonymous</a>
+
+                                <!-- TODO: add users and username -->
+                                <small>1 hours ago</small>
+                                <!-- TODO: add a formatted date -->
+                            </p>
+
+                            <!--<button class="delete" (click)="delete(r); $event.stopPropagation()">x</button>-->
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </md-tab>
+
+
+        <md-tab label="Negatives">
+                <div>
+                  <progress class="progress is-danger"  id="progress-false"  value="{{ negativeRelevancePercentage }}" max="100">{{ negativeRelevancePercentage }}%</progress>
+                  <br>
+                </div>
+
+                  <div class="event-timeline">
+
+                    <ul>
+                      <li *ngFor="let r of negativeReviewList">
+                        <p class="event-item">
+
+                          <small>{{ r.reviewedTimes }}</small>
+                          <!-- TODO: add a times checked document -->
+                          <span class="icon-item-type"><i class="fa fa-star"></i></span>
+                          <a href="{{r.referenceUrl}}">{{r.description}}</a> shared by
+                          <a href="#">Anonymous</a>
+
+                          <!-- TODO: add users and username -->
+                          <small>1 hours ago</small>
+                          <!-- TODO: add a formatted date -->
+                        </p>
+
+                        <!--<button class="delete" (click)="delete(r); $event.stopPropagation()">x</button>-->
+                      </li>
+
+                    </ul>
+
+                </div>
+        </md-tab>
+
+        <!--<md-tab label="+">-->
+
+                <!--<div class="field">-->
+                    <!--<label class="label">Ressource orientation</label>-->
+                    <!--<p class="control">-->
+                    <!--<span class="select">-->
+                      <!--<select #ressourceType>-->
+                          <!--<option>positive</option>-->
+                          <!--<option>negative</option>-->
+                          <!--<option>controversial</option>-->
+                      <!--</select>-->
+                    <!--</span>-->
+                    <!--</p>-->
+                <!--</div>-->
+
+                <!--<div class="field">-->
+                    <!--<label class="label">Ressource Name</label>-->
+                    <!--<p class="control">-->
+                        <!--<input class="input" type="text" placeholder="Text input" #ressourceName>-->
+                    <!--</p>-->
+                <!--</div>-->
+
+                <!--<div class="field">-->
+                    <!--<label class="label">Ressource URL</label>-->
+                    <!--<p class="control">-->
+                        <!--<input class="input" type="text" placeholder="http://www.resource/site/rument.pdf" #ressourceURL>-->
+                    <!--</p>-->
+                    <!--<p class="help is-success">This URL is registered</p>-->
+                <!--</div>-->
+
+                <!--<div class="field is-grouped">-->
+                    <!--<p class="control">-->
+                        <!--<button class="button is-primary"-->
+                                <!--(click)="addDocument(ressourceName.value, ressourceURL.value, ressourceType.value);-->
+                                <!--ressourceName.value = ressourceURL.value ='';">-->
+                            <!--Submit</button>-->
+                    <!--</p>-->
+                <!--</div>-->
+
+
+        <!--</md-tab>-->
+
+
+    </md-tab-group>
+
+
+</div>

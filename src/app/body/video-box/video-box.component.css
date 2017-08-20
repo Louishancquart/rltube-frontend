@@ -1,0 +1,24 @@
+:host {
+    display: flex;
+}
+
+.video {
+    flex: 99%;
+}
+
+#plugin {
+    flex: 1%;
+}
+
+#false {
+    background: #CC4945;
+}
+
+#soso {
+    background: #F8A93F;
+}
+
+#true {
+    background: darkturquoise;
+}
+
