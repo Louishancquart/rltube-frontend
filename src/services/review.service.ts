@@ -21,6 +21,34 @@ export class ReviewService {
     constructor(private http: Http) {
     }
 
+
+
+    private handleError(error: any): Promise<any> {
+        console.error('An error occurred', error); // for demo purposes only
+        return Promise.reject(error.message || error);
+    }
+
+
+    public getReview(): Promise<Review[]> {
+      return this.http.get(this.restUrl)
+        .toPromise()
+        .then( response =>
+          response.json() as Review[])
+        .catch(this.handleError);
+    }
+
+    create(r: Review): Promise<Review> {
+        return this.http
+            .post(this.restUrl, JSON.stringify(r), {headers: this.headers})
+            .toPromise()
+            .then(res => res.json().data as Review)
+            .catch(this.handleError);
+    }
+
+
+
+
+
     // getReviews(): Observable<Review[]> {
     //   return this.http.get(this.restUrl)
     //     .map(res => {
@@ -38,27 +66,6 @@ export class ReviewService {
     // }
 
 
-    private handleError(error: any): Promise<any> {
-        console.error('An error occurred', error); // for demo purposes only
-        return Promise.reject(error.message || error);
-    }
-
-
-    public getReview(): Promise<Review[]> {
-      return this.http.get(this.restUrl)
-        .toPromise()
-        .then( response =>
-          response.json() as Review[])
-        .catch(this.handleError);
-    }
-
-
-  // getReview(): Observable<Review> {
-  //   return this.http.get(this.restUrl)
-  //     .map(response => response.json().data as Review);
-  // }
-
-
     // getDocuments(): Promise<RDocument[]> {
     //     return this.http.get(this.documentsUrl)
     //         .toPromise()
@@ -72,11 +79,4 @@ export class ReviewService {
 
 
 
-    // create(doc: RDocument): Promise<RDocument> {
-    //     return this.http
-    //         .post(this.restUrl, JSON.stringify(doc), {headers: this.headers})
-    //         .toPromise()
-    //         .then(res => res.json().data as RDocument)
-    //         .catch(this.handleError);
-    // }
 }

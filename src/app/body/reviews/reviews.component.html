@@ -12,7 +12,7 @@
     <md-tab-group>
         <md-tab label="Positives">
                 <div>
-                    <progress class="progress  is-primary" id="progress-true" value="{{ positiveRelevancePercentage }}" max="100">{{ positiveRelevancePercentage }}%</progress>
+                    <progress class="progress is-small is-primary" id="progress-true" value="{{ positiveRelevancePercentage }}" max="100">{{ positiveRelevancePercentage }}%</progress>
                     <br>
                 </div>
 
@@ -45,7 +45,7 @@
 
         <md-tab label="Controversials">
             <div>
-                <progress class="progress is-warning"  id="progress-soso" value="{{ controversialRelevancePercentage }}" max="100">{{ controversialRelevancePercentage }}%</progress>
+                <progress class="progress is-small is-warning"  id="progress-soso" value="{{ controversialRelevancePercentage }}" max="100">{{ controversialRelevancePercentage }}%</progress>
                 <br>
             </div>
             <div class="container">
@@ -76,7 +76,7 @@
 
         <md-tab label="Negatives">
                 <div>
-                  <progress class="progress is-danger"  id="progress-false"  value="{{ negativeRelevancePercentage }}" max="100">{{ negativeRelevancePercentage }}%</progress>
+                  <progress class="progress is-small is-danger"  id="progress-false"  value="{{ negativeRelevancePercentage }}" max="100">{{ negativeRelevancePercentage }}%</progress>
                   <br>
                 </div>
 
@@ -105,47 +105,52 @@
                 </div>
         </md-tab>
 
-        <!--<md-tab label="+">-->
+        <md-tab label="+">
 
-                <!--<div class="field">-->
-                    <!--<label class="label">Ressource orientation</label>-->
-                    <!--<p class="control">-->
-                    <!--<span class="select">-->
-                      <!--<select #ressourceType>-->
-                          <!--<option>positive</option>-->
-                          <!--<option>negative</option>-->
-                          <!--<option>controversial</option>-->
-                      <!--</select>-->
-                    <!--</span>-->
-                    <!--</p>-->
-                <!--</div>-->
-
-                <!--<div class="field">-->
-                    <!--<label class="label">Ressource Name</label>-->
-                    <!--<p class="control">-->
-                        <!--<input class="input" type="text" placeholder="Text input" #ressourceName>-->
-                    <!--</p>-->
-                <!--</div>-->
-
-                <!--<div class="field">-->
-                    <!--<label class="label">Ressource URL</label>-->
-                    <!--<p class="control">-->
-                        <!--<input class="input" type="text" placeholder="http://www.resource/site/rument.pdf" #ressourceURL>-->
-                    <!--</p>-->
-                    <!--<p class="help is-success">This URL is registered</p>-->
-                <!--</div>-->
-
-                <!--<div class="field is-grouped">-->
-                    <!--<p class="control">-->
-                        <!--<button class="button is-primary"-->
-                                <!--(click)="addDocument(ressourceName.value, ressourceURL.value, ressourceType.value);-->
-                                <!--ressourceName.value = ressourceURL.value ='';">-->
-                            <!--Submit</button>-->
-                    <!--</p>-->
-                <!--</div>-->
+                <div class="field">
+                    <label class="label">Ressource orientation</label>
+                    <p class="control">
+                    <span class="select">
+                      <select #reviewType>
+                          <option value="POSITIVE">positive</option>
+                          <option value="NEGATIVE">negative</option>
+                          <option value="CONTROVERSIAL">controversial</option>
+                      </select>
+                    </span>
+                    </p>
+                </div>
 
 
-        <!--</md-tab>-->
+
+                <div class="field">
+                    <label class="label">Reference URL</label>
+                    <p class="control">
+                        <input class="input" type="text" placeholder="http://www.resource/site/rument.pdf" #reviewReferenceURL>
+                    </p>
+                    <p class="help is-success">This URL is registered</p>
+                </div>
+
+
+                <div class="field">
+                  <label class="label">Comment</label>
+                  <p class="control">
+                    <input class="input" type="text" placeholder="This document clearly confirm the video point on ..." #reviewDescription>
+                  </p>
+                </div>
+
+                <div class="field is-grouped">
+                    <p class="control">
+                        <button class="button is-primary"
+                                (click)="addReview(reviewType.value, reviewReferenceURL.value, reviewDescription.value );
+                                reviewDescription.value = reviewReferenceURL.value ='';">
+                            Submit</button>
+                    </p>
+                </div>
+
+
+        </md-tab>
+
+
 
 
     </md-tab-group>

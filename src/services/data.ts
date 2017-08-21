@@ -13,3 +13,8 @@ export class Review {
 //   relevance: number;
 //   type: string;
 // }
+
+
+export class Video {
+  videoUrl: string;
+}

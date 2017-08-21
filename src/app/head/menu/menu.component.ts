@@ -1,4 +1,5 @@
-import {Component} from '@angular/core';
+import {Component, EventEmitter, Output} from '@angular/core';
+import {Video} from '../../../services/data';
 
 @Component({
     selector: 'app-menu',
@@ -7,4 +8,15 @@ import {Component} from '@angular/core';
 })
 
 export class MenuComponent {
+  constructor() { }
+
+  @Output() videoUrlUpdated = new EventEmitter<string>();
+
+  private video: Video;
+
+  load(vURL: string) {
+    this.videoUrlUpdated.emit(vURL);
+    console.log("URL:dddd " + vURL);
+  }
+
 }
