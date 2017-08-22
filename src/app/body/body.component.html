@@ -1,7 +1,12 @@
+
+<app-videos-list *ngIf="videoList.length" class="mdl-grid" [videoList]="videoList" [loadingInProgress]="loadingInProgress">
+
+</app-videos-list>
+
 <app-video-box>Video Box Container</app-video-box>
 <br>
 
-<app-reviews (videoUrlUpdated)="updateVideoURL($event)">Reviews</app-reviews>
+<app-reviews>Reviews</app-reviews>
 <br>
 
 

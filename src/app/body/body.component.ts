@@ -5,6 +5,7 @@ import {ReviewService} from '../../services/review.service';
 
 import {Observable} from "rxjs/Observable";
 import {Subject} from "rxjs/Subject";
+import {AppComponent} from "../app.component";
 
 
 
@@ -13,7 +14,7 @@ import {Subject} from "rxjs/Subject";
   providers: [ ReviewService],
   templateUrl: 'body.component.html'
 })
-export class BodyComponent implements OnInit {
+export class BodyComponent extends AppComponent implements OnInit {
 
 
   review: Review;
@@ -37,7 +38,9 @@ export class BodyComponent implements OnInit {
   // private searchTerms = new Subject<string>();
 
 
-  constructor( protected reviewService: ReviewService) {}
+  constructor( protected reviewService: ReviewService) {
+    super();
+  }
 
   ngOnInit(): void {
     this.getReviewList();
@@ -116,9 +119,7 @@ export class BodyComponent implements OnInit {
     this.negativeRelevancePercentage = Math.round((this.negativeRelevance / this.totalRelevance) * 1000) / 10;
     this.controversialRelevancePercentage = Math.round((this.controversialRelevance / this.totalRelevance) * 1000) / 10;
 
-    console.log( "positiveRelevancePercentage: "+this.positiveRelevancePercentage );
-    console.log( "negativeRelevancePercentage: "+this.negativeRelevancePercentage );
-    console.log( "controversialRelevancePercentage: "+this.controversialRelevancePercentage );
-
   }
+
+
 }

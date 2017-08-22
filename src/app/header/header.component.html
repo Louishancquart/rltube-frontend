@@ -1,0 +1,19 @@
+<nav class="nav has-shadow" >
+  <div class="container">
+    <div class="nav-left">
+      <app-logo class="nav-item is-primary"></app-logo>
+
+      <div class="nav-item is-primary">
+        <app-videos-search (videosUpdated)="handleSearchVideo($event)" [loadingInProgress]="loadingInProgress" style="width: 100%;"></app-videos-search>
+
+      </div>
+
+    </div>
+
+
+
+      <app-menu class="nav-right nav-menu"></app-menu>
+
+  </div>
+
+</nav>
