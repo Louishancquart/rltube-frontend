@@ -32,7 +32,7 @@ export class ReviewsComponent extends BodyComponent {
 
         const review: Review = new Review();
 
-        review.id = Date.now() % 1000;
+
         review.type = 'POSITIVE';
         review.referenceUrl = referenceUrl;
         review.reviewedMediaUrl = this.videoUrl;

@@ -42,6 +42,9 @@ export class BodyComponent extends AppComponent implements OnInit {
     super();
   }
 
+
+
+
   ngOnInit(): void {
     this.getReviewList();
     // this.reviewService.getReview().then( review => {

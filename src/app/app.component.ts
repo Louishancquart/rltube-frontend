@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Output} from '@angular/core';
 import {forEach} from "@angular/router/src/utils/collection";
 
 @Component({
@@ -6,17 +6,20 @@ import {forEach} from "@angular/router/src/utils/collection";
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent {
   title = 'app';
 
   public videoList = [];
+
   public loadingInProgress = false;
+
+  public getVideoList():  void [] {
+    return this.videoList;
+  }
 
   handleSearchVideo(videos: Array<any>): void {
     this.videoList = videos;
-
-    for ( const v  of this.videoList){
-    console.log("video list: " + v.toString());
-    }
+    console.log("video list: " + this.videoList.length);
   }
 }

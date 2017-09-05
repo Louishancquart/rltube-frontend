@@ -1,5 +1,5 @@
 
-<app-videos-list *ngIf="videoList.length" class="mdl-grid" [videoList]="videoList" [loadingInProgress]="loadingInProgress">
+<app-videos-list *ngIf="getVideoList()" class="mdl-grid" [videoList]="getVideoList()" [loadingInProgress]="loadingInProgress">
 
 </app-videos-list>
 

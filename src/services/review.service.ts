@@ -37,7 +37,7 @@ export class ReviewService {
         .catch(this.handleError);
     }
 
-    create(r: Review): Promise<Review> {
+    public create(r: Review): Promise<Review> {
         return this.http
             .post(this.restUrl, JSON.stringify(r), {headers: this.headers})
             .toPromise()
