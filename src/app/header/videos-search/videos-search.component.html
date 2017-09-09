@@ -1,10 +1,39 @@
 <form [formGroup]="searchForm" (ngSubmit)="doSearch($event)">
-    <div class="control is-loading">
-      <input class="input" placeholder="Loading input" formControlName="query" type="text" id="query" autocomplete="off">
-    <!--<input class="mdl-textfield__input" formControlName="query" type="text" id="query" autocomplete="off">-->
-    <label class="mdl-textfield__label" for="query">Search</label>
-  <button type="submit" class="mdl-button mdl-js-button mdl-button--icon">
-		<i class="material-icons ">search</i>
-	</button>
-    </div>
+
+  <p class="control has-addons searchbox">
+    <input class="input" formControlName="query" type="text" id="query" autocomplete="off" placeholder="Search youtube...">
+    <a class="button is-dark" for="query" (click)="doSearch($event)">
+      <i class="fa fa-search"></i>
+
+    </a>
+  </p>
+  <span class="nav-toggle">
+  <span></span>
+  <span></span>
+  <span></span>
+  </span>
+    <!--<div class="control is-loading">-->
+      <!--<input class="input" placeholder="Loading input" formControlName="query" type="text" id="query" autocomplete="off">-->
+    <!--&lt;!&ndash;<input class="mdl-textfield__input" formControlName="query" type="text" id="query" autocomplete="off">&ndash;&gt;-->
+    <!--<label class="mdl-textfield__label" for="query">Search</label>-->
+  <!--<button type="submit" class="mdl-button mdl-js-button mdl-button--icon">-->
+		<!--<i class="material-icons ">search</i>-->
+	<!--</button>-->
+    <!--</div>-->
 </form>
+
+
+
+
+<!--<p class="control has-addons searchbox">-->
+  <!--<input class="input" type="text" placeholder="Search videotube...">-->
+  <!--<a class="button is-dark">-->
+    <!--&nbsp; <i class="fa fa-search"></i> &nbsp;-->
+  <!--</a>-->
+<!--</p>-->
+
+<!--<span class="nav-toggle">-->
+        <!--<span></span>-->
+        <!--<span></span>-->
+        <!--<span></span>-->
+      <!--</span>-->
