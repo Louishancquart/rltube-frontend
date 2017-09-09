@@ -8,7 +8,7 @@ export class Review {
 }
 // export class RDocument {
 //   id: number;
-//   name: string;
+//   video: string;
 //   url: string;
 //   relevance: number;
 //   type: string;

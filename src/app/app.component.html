@@ -1,14 +1,10 @@
-<app-header >Header</app-header>
+<app-header (videosUpdated)="handleSearchVideo($event)">Header</app-header>
 
 <div class="spacer"></div>
 
 
 <div class="container">
-  <div class="columns">
-      <div class="column is-2"></div>
-      <div class="column is-8">
-          <app-body> App Body</app-body>
-      </div>
-      <div class="column is-2"></div>
-  </div>
+  <app-body [videoList]="videoList"> App Body</app-body>
+
+
 </div>

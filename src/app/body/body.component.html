@@ -1,13 +1,18 @@
+<div class="columns">
+  <div class="column is-8">
+    <app-video-box>Video Box Container</app-video-box>
+    <br>
 
-<app-videos-list *ngIf="getVideoList()" class="mdl-grid" [videoList]="getVideoList()" [loadingInProgress]="loadingInProgress">
+    <app-reviews>Reviews</app-reviews>
+    <br>
+  </div>
+  <div class="column is-4">
+    <app-videos-list *ngIf="videoList" class="mdl-grid" [videoList]="videoList"></app-videos-list>
+  </div>
+</div>
 
-</app-videos-list>
 
-<app-video-box>Video Box Container</app-video-box>
-<br>
 
-<app-reviews>Reviews</app-reviews>
-<br>
 
 
 

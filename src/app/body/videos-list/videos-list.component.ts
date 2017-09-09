@@ -10,8 +10,8 @@ import {YoutubePlayerService} from "../../../services/youtube-player.service";
 
 export class VideosListComponent {
   @Input() videoList;
-  @Input() loadingInProgress;
-  @Output() videoPlaylist = new EventEmitter();
+  // @Input() loadingInProgress;
+  // @Output() videoPlaylist = new EventEmitter();
 
   constructor(private youtubePlayer: YoutubePlayerService,
               // private playlistService: PlaylistStoreService
@@ -20,10 +20,10 @@ export class VideosListComponent {
 
   play(video: any): void {
     this.youtubePlayer.playVideo(video.id, video.snippet.title);
-    this.addToPlaylist(video);
+    // this.addToPlaylist(video);
   }
 
-  addToPlaylist(video: any): void {
-    this.videoPlaylist.emit(video);
-  }
+  // addToPlaylist(video: any): void {
+  //   this.videoPlaylist.emit(video);
+  // }
 }

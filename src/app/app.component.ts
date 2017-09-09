@@ -10,16 +10,21 @@ import {forEach} from "@angular/router/src/utils/collection";
 export class AppComponent {
   title = 'app';
 
-  public videoList = [];
+
 
   public loadingInProgress = false;
 
-  public getVideoList():  void [] {
-    return this.videoList;
-  }
+  videoList = [];
 
   handleSearchVideo(videos: Array<any>): void {
     this.videoList = videos;
     console.log("video list: " + this.videoList.length);
+    // console.log("video type: " + this.videoList[0].type);
   }
+
+  // public getVideoList():  void [] {
+  //   return this.videoList;
+  // }
+
+
 }

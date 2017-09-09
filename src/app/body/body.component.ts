@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Review} from '../../services/data';
 import {ReviewService} from '../../services/review.service';
 
@@ -14,7 +14,7 @@ import {AppComponent} from "../app.component";
   providers: [ ReviewService],
   templateUrl: 'body.component.html'
 })
-export class BodyComponent extends AppComponent implements OnInit {
+export class BodyComponent implements OnInit {
 
 
   review: Review;
@@ -33,14 +33,28 @@ export class BodyComponent extends AppComponent implements OnInit {
   controversialRelevancePercentage: number;
   reviewString: string;
 
+  @Input() videoList;
+
   //
   // review: Observable<Review>;
   // private searchTerms = new Subject<string>();
 
 
+  // private _video = '';
+  //
+  // @Input()
+  // set video(video: string) {
+  //   this._video = (video && video.trim()) || '<no video set>';
+  // }
+  //
+  // get video(): string { return this._video; }
+
+
+
   constructor( protected reviewService: ReviewService) {
-    super();
+    // super();
   }
+
 
 
 
