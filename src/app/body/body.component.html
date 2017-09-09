@@ -1,6 +1,11 @@
 <div class="columns">
   <div class="column is-8">
-    <app-video-box>Video Box Container</app-video-box>
+    <app-video-box
+    [negativeRelevancePercentage]="negativeRelevancePercentage"
+    [controversialRelevancePercentage]="controversialRelevancePercentage"
+    [positiveRelevancePercentage]="positiveRelevancePercentage">
+      Video Box Container
+    </app-video-box>
     <br>
 
     <app-reviews>Reviews</app-reviews>

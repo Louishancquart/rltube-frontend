@@ -18,7 +18,7 @@ export class AppComponent {
 
   handleSearchVideo(videos: Array<any>): void {
     this.videoList = videos;
-    console.log("video list: " + this.videoList.length);
+    // console.log("video list: " + this.videoList.length);
     // console.log("video type: " + this.videoList[0].type);
   }
 

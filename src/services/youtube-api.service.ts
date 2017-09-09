@@ -8,7 +8,7 @@ import {YOUTUBE_API_KEY} from "./constants";
 @Injectable()
 export class YoutubeApiService {
   base_url = 'https://www.googleapis.com/youtube/v3/';
-  max_results = 50;
+  max_results = 30;
 
   public nextToken: string;
   public lastQuery: string;

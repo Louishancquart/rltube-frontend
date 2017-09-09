@@ -17,23 +17,25 @@ import {AppComponent} from "../app.component";
 export class BodyComponent implements OnInit {
 
 
-  review: Review;
+
+  @Input() videoList;
+
+
   reviewList: Review[];
   positiveReviewList: Review[];
   negativeReviewList: Review[];
-  controversialReviewList: Review[];
 
+  controversialReviewList: Review[];
   positiveRelevance: number;
   negativeRelevance: number;
   controversialRelevance: number;
-  totalRelevance: number;
 
+  totalRelevance: number;
   positiveRelevancePercentage: number;
   negativeRelevancePercentage: number;
   controversialRelevancePercentage: number;
-  reviewString: string;
 
-  @Input() videoList;
+  reviewString: string;
 
   //
   // review: Observable<Review>;
@@ -60,6 +62,7 @@ export class BodyComponent implements OnInit {
 
 
   ngOnInit(): void {
+    // this.currentVideoUrl = "https://www.youtube.com/embed/L3cpFYNPYz8";
     this.getReviewList();
     // this.reviewService.getReview().then( review => {
     //
@@ -70,6 +73,12 @@ export class BodyComponent implements OnInit {
 
   }
 
+
+  // handleNewSelectedVideo(videoID: string): void {
+  //   console.log("videoID:" + videoID);
+  //    this.currentVideoUrl = 'https://www.youtube.com/embed/' + videoID;
+  //   console.log("video URL:" + this.currentVideoUrl );
+  // }
 
   getReviewList(): void {
       this.reviewService.getReview().then( reviews => {

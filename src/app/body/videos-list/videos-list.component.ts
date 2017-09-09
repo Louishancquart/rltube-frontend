@@ -12,15 +12,21 @@ export class VideosListComponent {
   @Input() videoList;
   // @Input() loadingInProgress;
   // @Output() videoPlaylist = new EventEmitter();
+  // @Output() newSelectedVideo = new EventEmitter<string>();
 
   constructor(private youtubePlayer: YoutubePlayerService,
               // private playlistService: PlaylistStoreService
   ) {
   }
 
-  play(video: any): void {
-    this.youtubePlayer.playVideo(video.id, video.snippet.title);
+  play(videoID: any): void {
+    // this.youtubePlayer.playVideo(video.id, video.snippet.title);
+    // this.newSelectedVideo.emit(videoID);
+    // console.log("new vid selected:" + videoID);
     // this.addToPlaylist(video);
+
+    const currentVideo: HTMLIFrameElement = document.getElementById("current-video") as HTMLIFrameElement;
+    currentVideo.setAttribute('src', 'https://www.youtube.com/embed/' + videoID);
   }
 
   // addToPlaylist(video: any): void {
