@@ -1,7 +1,5 @@
 :host {
     display: flex;
-  /*width:800px;*/
-  /*height:500px;*/
 }
 
 .video {
@@ -21,7 +19,6 @@
 }
 
 #true {
-    /*background: darkturquoise;*/
   background: #00d1b2;
 }
 

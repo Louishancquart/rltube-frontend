@@ -1,5 +1,4 @@
 import {Component, EventEmitter, Output} from '@angular/core';
-import {AppComponent} from "../app.component";
 
 @Component({
   selector: 'app-header',
@@ -15,6 +14,5 @@ export class HeaderComponent {
     this.videoList = videos;
     this.videosUpdated.emit(this.videoList);
     console.log("video list: " + this.videoList.length);
-    // console.log("video type: " + this.videoList[0].type);
   }
 }

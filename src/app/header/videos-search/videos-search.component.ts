@@ -1,8 +1,7 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
-import { YoutubeApiService } from '../../../services/youtube-api.service';
-// import { YoutubePlayerService } from '../../../services/youtube-player.service';
-import { NotificationService } from '../../../services/notification.service';
+import {Component, Input, Output, EventEmitter} from '@angular/core';
+import {FormBuilder, Validators} from '@angular/forms';
+import {YoutubeApiService} from '../../../services/youtube-api.service';
+import {NotificationService} from '../../../services/notification.service';
 
 @Component({
   selector: 'app-videos-search',
@@ -11,39 +10,40 @@ import { NotificationService } from '../../../services/notification.service';
 })
 
 export class VideosSearchComponent {
-    @Output() videosUpdated = new EventEmitter();
-    @Input() loadingInProgress;
+  @Output() videosUpdated = new EventEmitter();
+  @Input() loadingInProgress;
 
-    private last_search: string;
+  private last_search: string;
 
-    public searchForm = this.fb.group({
-      query: ['', Validators.required]
-    });
+  public searchForm = this.fb.group({
+    query: ['', Validators.required]
+  });
 
-    constructor(
-      public fb: FormBuilder,
-      private youtubeService: YoutubeApiService,
-      // private youtubePlayer: YoutubePlayerService,
-      private notificationService: NotificationService) {
-      this.youtubeService.searchVideos('')
-        .then(data => {
-          this.videosUpdated.emit(data);
-        });
+  constructor(public fb: FormBuilder,
+              private youtubeService: YoutubeApiService,
+              // private youtubePlayer: YoutubePlayerService,
+              private notificationService: NotificationService) {
+    this.youtubeService.searchVideos('')
+      .then(data => {
+        this.videosUpdated.emit(data);
+      });
+  }
+
+  doSearch(event): void {
+    if (this.loadingInProgress || (this.searchForm.value.query.trim().length === 0) ||
+      (this.last_search && this.last_search === this.searchForm.value.query)) {
+      return;
     }
 
-    doSearch(event): void {
-      if (this.loadingInProgress || (this.searchForm.value.query.trim().length === 0) ||
-        (this.last_search && this.last_search === this.searchForm.value.query)) { return; }
+    this.videosUpdated.emit([]);
+    this.last_search = this.searchForm.value.query;
 
-      this.videosUpdated.emit([]);
-      this.last_search = this.searchForm.value.query;
-
-      this.youtubeService.searchVideos(this.last_search)
-        .then(data => {
-          if (data.length < 1) {
-            this.notificationService.showNotification('No matches found.');
-          }
-          this.videosUpdated.emit(data);
-        });
-    }
+    this.youtubeService.searchVideos(this.last_search)
+      .then(data => {
+        if (data.length < 1) {
+          this.notificationService.showNotification('No matches found.');
+        }
+        this.videosUpdated.emit(data);
+      });
+  }
 }

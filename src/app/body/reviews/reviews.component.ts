@@ -18,7 +18,7 @@ import {convertValueToOutputAst} from "@angular/compiler/src/output/value_util";
 
 export class ReviewsComponent extends BodyComponent {
 
-  private videoUrl = "okokokokok";
+  private videoUrl= "okokokokok";
 
 
   updateVideoURL(videoUrl: string) {
