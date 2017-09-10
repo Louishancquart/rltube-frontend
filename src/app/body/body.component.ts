@@ -11,15 +11,17 @@ export class BodyComponent implements OnInit {
   @Input() videoList;
 
   reviewList: Review[];
+
   positiveReviewList: Review[];
   negativeReviewList: Review[];
-
   controversialReviewList: Review[];
+
   positiveRelevance: number;
   negativeRelevance: number;
   controversialRelevance: number;
 
   totalRelevance: number;
+
   positiveRelevancePercentage: number;
   negativeRelevancePercentage: number;
   controversialRelevancePercentage: number;

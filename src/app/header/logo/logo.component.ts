@@ -9,6 +9,7 @@ import {Component} from '@angular/core';
                     <span><strong>Rely</strong></span>
                     <span style="color: darkturquoise;">Tube</span>
                 </a>
+   
 `
 })
 

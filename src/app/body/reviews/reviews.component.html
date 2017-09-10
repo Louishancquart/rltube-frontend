@@ -1,14 +1,4 @@
 <div class="box">
-
-    <!--<a routerLink="/reviews">-->
-    <a>
-        <div class="video-title">
-            Reviews
-        </div>
-    </a>
-    <br>
-
-
     <md-tab-group>
         <md-tab label="Positives">
                 <div>
@@ -19,7 +9,6 @@
                 <div class="event-timeline">
                     <ul>
                         <li *ngFor="let r of positiveReviewList;">
-
 
                             <p class="event-item">
                                 <small>{{ r.reviewedTimes }}</small>
@@ -32,14 +21,9 @@
                                 <small>1 hours ago</small>
                                 <!-- TODO: add a formatted date -->
                             </p>
-
-                            <!--<button class="delete" (click)="delete(doc); $event.stopPropagation()">x</button>-->
                         </li>
                     </ul>
-
                 </div>
-
-
         </md-tab>
 
 

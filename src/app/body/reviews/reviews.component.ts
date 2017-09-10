@@ -18,12 +18,21 @@ import {convertValueToOutputAst} from "@angular/compiler/src/output/value_util";
 
 export class ReviewsComponent extends BodyComponent {
 
-  private videoUrl= "okokokokok";
+  // @Input() negativeRelevancePercentage;
+  // @Input() controversialRelevancePercentage;
+  // @Input() positiveRelevancePercentage;
+  //
+  // @Input() negativeReviewList;
+  // @Input() controversialReviewList;
+  // @Input() positiveReviewList;
+
+
+  private currentVideoUrl= "okokokokok";
 
 
   updateVideoURL(videoUrl: string) {
-    this.videoUrl = videoUrl;
-    console.log("URL:ssssssss " + this.videoUrl);
+    this.currentVideoUrl = videoUrl;
+    console.log("current video URL:" + this.currentVideoUrl);
   }
 
     addReview(type: string, referenceUrl: string, description: string ): void {
@@ -35,7 +44,7 @@ export class ReviewsComponent extends BodyComponent {
 
         review.type = 'POSITIVE';
         review.referenceUrl = referenceUrl;
-        review.reviewedMediaUrl = this.videoUrl;
+        review.reviewedMediaUrl = this.currentVideoUrl;
         review.reviewedTimes = 0;
         review.description = description;
 
