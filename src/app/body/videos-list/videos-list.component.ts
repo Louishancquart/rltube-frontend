@@ -9,11 +9,13 @@ import {YoutubePlayerService} from "../../../services/youtube-player.service";
 
 export class VideosListComponent {
   @Input() videoList;
+  @Input() reviewService;
 
-  constructor() {}
+  // constructor() {}
 
-  play(videoID: any): void {
+  play(videoID: string): void {
     const currentVideo: HTMLIFrameElement = document.getElementById("current-video") as HTMLIFrameElement;
     currentVideo.setAttribute('src', 'https://www.youtube.com/embed/' + videoID);
+    this.reviewService.getReviewList(videoID);
   }
 }

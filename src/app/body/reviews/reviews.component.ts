@@ -1,39 +1,57 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, OnInit} from "@angular/core";
 
-import 'rxjs/add/operator/switchMap';
-// import {MdTabGroup} from "@angular/material";
-import {BodyComponent} from "../body.component";
+import "rxjs/add/operator/switchMap";
 import {Review} from "../../../services/data";
-import {applySourceSpanToExpressionIfNeeded} from "@angular/compiler/src/output/output_ast";
-import {count} from "rxjs/operator/count";
-import {convertValueToOutputAst} from "@angular/compiler/src/output/value_util";
+import {ReviewService} from "../../../services/review.service";
 
 
 @Component({
     selector: 'app-reviews',
     templateUrl: 'reviews.component.html',
+    providers: [ ReviewService],
     styleUrls: ['reviews.component.css'],
 })
 
 
-export class ReviewsComponent extends BodyComponent {
+export class ReviewsComponent {
 
-  // @Input() negativeRelevancePercentage;
-  // @Input() controversialRelevancePercentage;
-  // @Input() positiveRelevancePercentage;
+  @Input() reviewService;
   //
-  // @Input() negativeReviewList;
-  // @Input() controversialReviewList;
-  // @Input() positiveReviewList;
+  // private currentVideoUrl= "okokokokok";
+  //
+  //
+  // reviewList: Review[];
+  //
+  // positiveReviewList: Review[];
+  // negativeReviewList: Review[];
+  // controversialReviewList: Review[];
+  //
+  // positiveRelevancePercentage: number;
+  // negativeRelevancePercentage: number;
+  // controversialRelevancePercentage: number;
+  //
+  //  // constructor( protected reviewService: ReviewService) {}
+  //
+  // ngOnInit(): void {
+  //
+  //   // if ( !this.reviewService.reviewList ) {
+  //   //   this.reviewService.getReviewList("L3cpFYNPYz8");
+  //   // }
+  //
+  //   this.reviewList = this.reviewService.reviewList;
+  //
+  //   this.positiveReviewList = this.reviewService.positiveReviewList;
+  //   this.negativeReviewList = this.reviewService.negativeReviewList;
+  //   this.controversialReviewList = this.reviewService.controversialReviewList;
+  //
+  //   this.positiveRelevancePercentage = this.reviewService.positiveRelevancePercentage;
+  //   this.negativeRelevancePercentage = this.reviewService.negativeRelevancePercentage;
+  //   this.controversialRelevancePercentage = this.reviewService.controversialRelevancePercentage;
+  // }
 
 
-  private currentVideoUrl= "okokokokok";
 
 
-  updateVideoURL(videoUrl: string) {
-    this.currentVideoUrl = videoUrl;
-    console.log("current video URL:" + this.currentVideoUrl);
-  }
 
     addReview(type: string, referenceUrl: string, description: string ): void {
         if ( !referenceUrl || !type) { return; }
@@ -44,17 +62,13 @@ export class ReviewsComponent extends BodyComponent {
 
         review.type = 'POSITIVE';
         review.referenceUrl = referenceUrl;
-        review.reviewedMediaUrl = this.currentVideoUrl;
-        review.reviewedTimes = 0;
+        review.reviewedMediaUrl = this.reviewService.currentVideo;
+        review.reviewedTimes = 1; // the new review is counted as reviewed already once by the contributor
         review.description = description;
 
         console.log(JSON.stringify(review));
 
-        this.reviewService.create(review)
-          .then( r => {
-            this.reviewList.push(r);
-            this.updateLists();
-          });
+        this.reviewService.create(review);
 
 
         //
