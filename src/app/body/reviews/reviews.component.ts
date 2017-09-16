@@ -52,7 +52,6 @@ export class ReviewsComponent {
 
 
 
-
     addReview(type: string, referenceUrl: string, description: string ): void {
         if ( !referenceUrl || !type) { return; }
         if ( !description ) { description = ''; }
@@ -60,7 +59,7 @@ export class ReviewsComponent {
         const review: Review = new Review();
 
 
-        review.type = 'POSITIVE';
+        review.type = type;
         review.referenceUrl = referenceUrl;
         review.reviewedMediaUrl = this.reviewService.currentVideo;
         review.reviewedTimes = 1; // the new review is counted as reviewed already once by the contributor
@@ -68,7 +67,7 @@ export class ReviewsComponent {
 
         console.log(JSON.stringify(review));
 
-        this.reviewService.create(review);
+        this.reviewService.creates(review);
 
 
         //

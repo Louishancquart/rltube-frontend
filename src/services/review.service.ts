@@ -21,15 +21,15 @@ export class ReviewService {
     negativeReviewList: Review[];
     controversialReviewList: Review[];
 
-    positiveRelevance: number;
-    negativeRelevance: number;
-    controversialRelevance: number;
+    positiveRelevance = 0;
+    negativeRelevance = 0;
+    controversialRelevance = 0;
 
-    totalRelevance: number;
+    totalRelevance = 0;
 
-    positiveRelevancePercentage: number;
-    negativeRelevancePercentage: number;
-    controversialRelevancePercentage: number;
+    positiveRelevancePercentage = 0;
+    negativeRelevancePercentage = 0;
+    controversialRelevancePercentage = 0;
 
     private restUrl = 'http://localhost:8080/rely-api/';  // URL to web api
     private headers = new Headers({'Content-Type': 'application/json'});
@@ -69,7 +69,7 @@ export class ReviewService {
         .catch(this.handleError);
     }
 
-    public create(r: Review): Promise<Review> {
+    public creates(r: Review): Promise<Review> {
         return this.http
             .post(this.restUrl, JSON.stringify(r), {headers: this.headers})
             .toPromise()

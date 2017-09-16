@@ -2,13 +2,13 @@
     <md-tab-group>
         <md-tab label="Positives">
                 <div>
-                    <progress class="progress is-small is-primary" id="progress-true" value="{{ this.reviewService.positiveRelevancePercentage }}" max="100">{{ this.reviewService.positiveRelevancePercentage }}%</progress>
+                    <progress class="progress is-small is-primary" id="progress-true" value="{{ this.reviewService.positiveRelevancePercentage || 0 }}" max="100">{{ this.reviewService.positiveRelevancePercentage || 0 }}%</progress>
                     <br>
                 </div>
 
                 <div class="event-timeline">
                     <ul>
-                        <li *ngFor="let r of this.reviewService.positiveReviewList;">
+                        <li *ngFor="let r of this.reviewService.positiveReviewList|| 0;">
 
                             <p class="event-item">
                                 <small>{{ r.reviewedTimes }}</small>
@@ -29,14 +29,14 @@
 
         <md-tab label="Controversials">
             <div>
-                <progress class="progress is-small is-warning"  id="progress-soso" value="{{ this.reviewService.controversialRelevancePercentage }}" max="100">{{ this.reviewService.controversialRelevancePercentage }}%</progress>
+                <progress class="progress is-small is-warning"  id="progress-soso" value="{{ this.reviewService.controversialRelevancePercentage || 0}}" max="100">{{ this.reviewService.controversialRelevancePercentage || 0}}%</progress>
                 <br>
             </div>
             <div class="container">
                 <div class="event-timeline">
 
                     <ul>
-                        <li *ngFor="let r of this.reviewService.controversialReviewList;">
+                        <li *ngFor="let r of this.reviewService.controversialReviewList || 0;">
                             <p class="event-item">
                                 <small>{{ r.reviewedTimes }}</small>
                                 <!-- TODO: add a times checked document -->
