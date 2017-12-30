@@ -1,18 +1,15 @@
 <div class="columns">
   <div class="column is-8">
-    <app-video-box
-    [negativeRelevancePercentage]="negativeRelevancePercentage"
-    [controversialRelevancePercentage]="controversialRelevancePercentage"
-    [positiveRelevancePercentage]="positiveRelevancePercentage">
+    <app-video-box [reviewService]="this.reviewService">
       Video Box Container
     </app-video-box>
     <br>
 
-    <app-reviews>Reviews</app-reviews>
+    <app-reviews [reviewService]="this.reviewService">Reviews</app-reviews>
     <br>
   </div>
   <div class="column is-4">
-    <app-videos-list *ngIf="videoList" class="mdl-grid" [videoList]="videoList"></app-videos-list>
+    <app-videos-list *ngIf="videoList" class="mdl-grid" [videoList]="videoList" [reviewService]="this.reviewService"></app-videos-list>
   </div>
 </div>
 

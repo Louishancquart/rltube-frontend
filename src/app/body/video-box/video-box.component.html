@@ -4,8 +4,8 @@
 </div>
 <div id="plugin">
     <div id="bars" style="height: 500px;">
-        <div [style.height.%]="negativeRelevancePercentage"  id="false" title="{{negativeRelevancePercentage}}%"></div>
-        <div [style.height.%]="controversialRelevancePercentage" id="soso" title="{{controversialRelevancePercentage}}%"></div>
-        <div [style.height.%]="positiveRelevancePercentage" id="true" title="{{positiveRelevancePercentage}}%"></div>
+        <div [style.height.%]="this.reviewService.negativeRelevancePercentage"  id="false" title="{{this.reviewService.negativeRelevancePercentage}}%"></div>
+        <div [style.height.%]="this.reviewService.controversialRelevancePercentage" id="soso" title="{{this.reviewService.controversialRelevancePercentage}}%"></div>
+        <div [style.height.%]="this.reviewService.positiveRelevancePercentage" id="true" title="{{this.reviewService.positiveRelevancePercentage}}%"></div>
     </div>
 </div>

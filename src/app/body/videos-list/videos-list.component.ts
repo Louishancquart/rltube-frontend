@@ -1,5 +1,6 @@
 import {Component, Input} from "@angular/core";
 import {YoutubePlayerService} from "../../../services/youtube-player.service";
+import {ReviewsComponent} from "../reviews/reviews.component";
 
 @Component({
   selector: 'app-videos-list',
@@ -9,11 +10,15 @@ import {YoutubePlayerService} from "../../../services/youtube-player.service";
 
 export class VideosListComponent {
   @Input() videoList;
+  @Input() reviewService;
 
-  constructor() {}
+  // constructor() {}
 
-  play(videoID: any): void {
+  play(videoID: string): void {
+    console.log("vid ID" + videoID as string);
+
     const currentVideo: HTMLIFrameElement = document.getElementById("current-video") as HTMLIFrameElement;
     currentVideo.setAttribute('src', 'https://www.youtube.com/embed/' + videoID);
+    this.reviewService.getReviewList(videoID);
   }
 }
