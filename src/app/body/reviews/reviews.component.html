@@ -1,6 +1,6 @@
 <div class="box">
-    <md-tab-group>
-        <md-tab label="Positives">
+    <mat-tab-group>
+        <mat-tab label="Positives">
                 <div>
                     <progress class="progress is-small is-primary" id="progress-true" value="{{ this.reviewService.positiveRelevancePercentage || 0 }}" max="100">{{ this.reviewService.positiveRelevancePercentage || 0 }}%</progress>
                     <br>
@@ -24,10 +24,10 @@
                         </li>
                     </ul>
                 </div>
-        </md-tab>
+        </mat-tab>
 
 
-        <md-tab label="Controversials">
+        <mat-tab label="Controversials">
             <div>
                 <progress class="progress is-small is-warning"  id="progress-soso" value="{{ this.reviewService.controversialRelevancePercentage || 0}}" max="100">{{ this.reviewService.controversialRelevancePercentage || 0}}%</progress>
                 <br>
@@ -55,10 +55,10 @@
 
                 </div>
             </div>
-        </md-tab>
+        </mat-tab>
 
 
-        <md-tab label="Negatives">
+        <mat-tab label="Negatives">
                 <div>
                   <progress class="progress is-small is-danger"  id="progress-false"  value="{{ this.reviewService.negativeRelevancePercentage }}" max="100">{{ this.reviewService.negativeRelevancePercentage }}%</progress>
                   <br>
@@ -87,9 +87,9 @@
                     </ul>
 
                 </div>
-        </md-tab>
+        </mat-tab>
 
-        <md-tab label="+">
+        <mat-tab label="+">
 
                 <div class="field">
                     <label class="label">Ressource orientation</label>
@@ -132,12 +132,12 @@
                 </div>
 
 
-        </md-tab>
+        </mat-tab>
 
 
 
 
-    </md-tab-group>
+    </mat-tab-group>
 
 
 </div>

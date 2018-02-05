@@ -7,7 +7,7 @@ import {ReviewsComponent} from './body/reviews/reviews.component';
 import {VideoBoxComponent} from './body/video-box/video-box.component';
 import {ReviewService} from "../services/review.service";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-import {MdTabsModule} from '@angular/material';
+import {MatTabsModule} from '@angular/material/tabs';
 import {BodyComponent} from "./body/body.component";
 import {HttpModule} from "@angular/http";
 import {HeaderComponent} from "./header/header.component";
@@ -35,7 +35,7 @@ import {VideosListComponent} from "./body/videos-list/videos-list.component";
     BrowserModule,
     HttpModule,
     BrowserAnimationsModule,
-    MdTabsModule,
+    MatTabsModule,
     ReactiveFormsModule
   ],
   providers: [

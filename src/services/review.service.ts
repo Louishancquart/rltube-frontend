@@ -31,7 +31,7 @@ export class ReviewService {
     negativeRelevancePercentage = 0;
     controversialRelevancePercentage = 0;
 
-    private restUrl = 'http://localhost:8080/rely-api/';  // URL to web api
+    private restUrl = 'http://localhost:8080/';  // URL to web api
     private headers = new Headers({'Content-Type': 'application/json'});
 
     constructor(private http: Http) {
@@ -70,6 +70,7 @@ export class ReviewService {
     }
 
     public creates(r: Review): Promise<Review> {
+      console.log("review: \n", JSON.stringify(r));
         return this.http
             .post(this.restUrl, JSON.stringify(r), {headers: this.headers})
             .toPromise()

@@ -1,5 +1,5 @@
 export class Review {
-    id: number;
+    videoId: string;
     type: string;
     referenceUrl: string;
     reviewedMediaUrl: string;

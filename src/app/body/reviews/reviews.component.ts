@@ -58,7 +58,7 @@ export class ReviewsComponent {
 
         const review: Review = new Review();
 
-
+        review.videoId = referenceUrl;
         review.type = type;
         review.referenceUrl = referenceUrl;
         review.reviewedMediaUrl = this.reviewService.currentVideo;
