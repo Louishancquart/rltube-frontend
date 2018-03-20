@@ -31,7 +31,7 @@ export class ReviewService {
     negativeRelevancePercentage = 0;
     controversialRelevancePercentage = 0;
 
-    private restUrl = 'http://localhost:8080/';  // URL to web api
+    private restUrl = 'http://localhost:8080/reviews/';  // URL to web api reviews/L3cpFYNPYz8
     private headers = new Headers({'Content-Type': 'application/json'});
 
     constructor(private http: Http) {
@@ -61,8 +61,8 @@ export class ReviewService {
         .catch(this.handleError);
     }
 
-    public getReviewsByReviewedMediaUrl(mediaUrl: string): Promise<Review[]> {
-      return this.http.get(this.restUrl + mediaUrl)
+    public getReviewsByReviewedMediaUrl(videoId: string): Promise<Review[]> {
+      return this.http.get(this.restUrl + videoId)
         .toPromise()
         .then( response =>
           response.json() as Review[])
@@ -77,7 +77,7 @@ export class ReviewService {
             .then(res => res.json().data as Review)
             .then(res => {
               this.reviewList.push(res);
-              this.updateLists();
+              // this.updateLists();
             })
             .catch(this.handleError);
     }
@@ -88,19 +88,18 @@ export class ReviewService {
   /**
    * Get the list of reviews related to a video Id ( hash ). it will be used to display reviews as a list in the the review component.
    * updateList is calle d on the end to cut the list into 3 according to their review type (positive, negative, controversial)
-   * @param mediaUrl
+   * @param videoId
    */
-  getReviewList(mediaUrl: string ): void {
-    if (mediaUrl === this._currentVideo) {
+  getReviewList(videoId: string ): void {
+    if (videoId === this._currentVideo) {
       return; // already updated so nothing to do
     }
-    this.currentVideo = mediaUrl;
+    this.currentVideo = videoId;
 
-    this.getReviewsByReviewedMediaUrl(mediaUrl).then( reviews => {
+    this.getReviewsByReviewedMediaUrl(videoId).then( reviews => {
       this.reviewList = reviews;
-      this.updateLists();
+      // this.updateLists();
     });
-
   }
 
     /**
