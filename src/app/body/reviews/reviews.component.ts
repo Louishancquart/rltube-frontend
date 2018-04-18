@@ -13,41 +13,41 @@ import {ReviewService} from "../../../services/review.service";
 })
 
 
-export class ReviewsComponent {
+export class ReviewsComponent implements OnInit {
 
   @Input() reviewService;
-  //
-  // private currentVideoUrl= "okokokokok";
-  //
-  //
-  // reviewList: Review[];
-  //
-  // positiveReviewList: Review[];
-  // negativeReviewList: Review[];
-  // controversialReviewList: Review[];
-  //
-  // positiveRelevancePercentage: number;
-  // negativeRelevancePercentage: number;
-  // controversialRelevancePercentage: number;
-  //
-  //  // constructor( protected reviewService: ReviewService) {}
-  //
-  // ngOnInit(): void {
-  //
-  //   // if ( !this.reviewService.reviewList ) {
-  //   //   this.reviewService.getReviewList("L3cpFYNPYz8");
-  //   // }
-  //
-  //   this.reviewList = this.reviewService.reviewList;
-  //
-  //   this.positiveReviewList = this.reviewService.positiveReviewList;
-  //   this.negativeReviewList = this.reviewService.negativeReviewList;
-  //   this.controversialReviewList = this.reviewService.controversialReviewList;
-  //
-  //   this.positiveRelevancePercentage = this.reviewService.positiveRelevancePercentage;
-  //   this.negativeRelevancePercentage = this.reviewService.negativeRelevancePercentage;
-  //   this.controversialRelevancePercentage = this.reviewService.controversialRelevancePercentage;
-  // }
+
+  private currentVideoUrl= "okokokokok";
+
+
+  reviewList: Review[];
+
+  positiveReviewList: Review[];
+  negativeReviewList: Review[];
+  controversialReviewList: Review[];
+
+  positiveRelevancePercentage: number;
+  negativeRelevancePercentage: number;
+  controversialRelevancePercentage: number;
+
+   // constructor( protected reviewService: ReviewService) {}
+
+  ngOnInit(): void {
+
+    if ( !this.reviewService.reviewList ) {
+      this.reviewService.getReviewList("L3cpFYNPYz8");
+    }
+
+    this.reviewList = this.reviewService.reviewList;
+
+    this.positiveReviewList = this.reviewService.positiveReviewList;
+    this.negativeReviewList = this.reviewService.negativeReviewList;
+    this.controversialReviewList = this.reviewService.controversialReviewList;
+
+    this.positiveRelevancePercentage = this.reviewService.positiveRelevancePercentage;
+    this.negativeRelevancePercentage = this.reviewService.negativeRelevancePercentage;
+    this.controversialRelevancePercentage = this.reviewService.controversialRelevancePercentage;
+  }
 
 
 
@@ -65,12 +65,27 @@ export class ReviewsComponent {
         review.reviewedTimes = 1; // the new review is counted as reviewed already once by the contributor
         review.description = description;
 
-        console.log(JSON.stringify(review));
+         const obj = { "review": review};
 
-        this.reviewService.creates(review);
+        console.log(JSON.stringify(obj));
+
+        this.reviewService.creates(obj);
 
 
-        //
+        // {
+        //   "review": {
+        //     "videoId": "L3cpFYNPYz8",
+        //       "type": "CONTROVERSIAL",
+        //       "reviewedMediaUrl": "666",
+        //       "referenceUrl": "https://google.com"
+        //   }
+        // }
+
+     // {"review":{
+      // "videoId":"TOTOTOTO",
+      // "type":"POSITIVE","referenceUrl":"TOTOTOTO","reviewedMediaUrl":"L3cpFYNPYz8","reviewedTimes":1,"description":"COCOCOCO"}}
+
+
         //   {
         //     id: Date.now(),
         //     type: type.toUpperCase,

@@ -2,7 +2,7 @@
     <mat-tab-group>
         <mat-tab label="Positives">
                 <div>
-                    <progress class="progress is-small is-primary" id="progress-true" value="{{ this.reviewService.positiveRelevancePercentage || 0 }}" max="100">{{ this.reviewService.positiveRelevancePercentage || 0 }}%</progress>
+                    <progress class="progress is-small is-primary" id="progress-true" value="{{ positiveRelevancePercentage }}" max="100">{{ positiveRelevancePercentage }}%</progress>
                     <br>
                 </div>
 
@@ -29,7 +29,7 @@
 
         <mat-tab label="Controversials">
             <div>
-                <progress class="progress is-small is-warning"  id="progress-soso" value="{{ this.reviewService.controversialRelevancePercentage || 0}}" max="100">{{ this.reviewService.controversialRelevancePercentage || 0}}%</progress>
+                <progress class="progress is-small is-warning"  id="progress-soso" value="{{ controversialRelevancePercentage }}" max="100">{{ controversialRelevancePercentage }}%</progress>
                 <br>
             </div>
             <div class="container">
@@ -60,7 +60,7 @@
 
         <mat-tab label="Negatives">
                 <div>
-                  <progress class="progress is-small is-danger"  id="progress-false"  value="{{ this.reviewService.negativeRelevancePercentage }}" max="100">{{ this.reviewService.negativeRelevancePercentage }}%</progress>
+                  <progress class="progress is-small is-danger"  id="progress-false"  value="{{ negativeRelevancePercentage }}" max="100">{{ negativeRelevancePercentage }}%</progress>
                   <br>
                 </div>
 

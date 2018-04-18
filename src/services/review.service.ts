@@ -31,7 +31,7 @@ export class ReviewService {
     negativeRelevancePercentage = 0;
     controversialRelevancePercentage = 0;
 
-    private restUrl = 'http://localhost:8080/';  // URL to web api
+    private restUrl = ' http://localhost:8080/reviews';  // URL to web api
     private headers = new Headers({'Content-Type': 'application/json'});
 
     constructor(private http: Http) {
@@ -62,7 +62,7 @@ export class ReviewService {
     }
 
     public getReviewsByReviewedMediaUrl(mediaUrl: string): Promise<Review[]> {
-      return this.http.get(this.restUrl + mediaUrl)
+      return this.http.get(this.restUrl + '/' + mediaUrl)
         .toPromise()
         .then( response =>
           response.json() as Review[])
@@ -93,6 +93,7 @@ export class ReviewService {
   getReviewList(mediaUrl: string ): void {
     if (mediaUrl === this._currentVideo) {
       return; // already updated so nothing to do
+      // TODO: this if is uselesss and prevent updating the list with the new input as I think to check.
     }
     this.currentVideo = mediaUrl;
 
@@ -108,9 +109,9 @@ export class ReviewService {
      * then statistics of relevance are used
      */
     updateLists(): void {
-      this.positiveReviewList = this.reviewList.filter(review => review.type === 'POSITIVE');
-      this.controversialReviewList = this.reviewList.filter(review => review.type === 'CONTROVERSIAL');
-      this.negativeReviewList = this.reviewList.filter(review => review.type === 'NEGATIVE');
+      this.positiveReviewList = Array.from(this.reviewList).filter(review => review.type === 'POSITIVE');
+      this.controversialReviewList = Array.from(this.reviewList).filter(review => review.type === 'CONTROVERSIAL');
+      this.negativeReviewList = Array.from(this.reviewList).filter(review => review.type === 'NEGATIVE');
       this.calculateProgress();
     }
 
