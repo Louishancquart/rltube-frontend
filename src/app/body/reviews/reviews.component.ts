@@ -3,6 +3,7 @@ import {Component, Input, OnInit} from "@angular/core";
 import "rxjs/add/operator/switchMap";
 import {Review} from "../../../services/data";
 import {ReviewService} from "../../../services/review.service";
+import {applySourceSpanToExpressionIfNeeded} from "@angular/compiler/src/output/output_ast";
 
 
 @Component({
@@ -17,9 +18,6 @@ export class ReviewsComponent implements OnInit {
 
   @Input() reviewService;
 
-  private currentVideoUrl= "okokokokok";
-
-
   reviewList: Review[];
 
   positiveReviewList: Review[];
@@ -30,15 +28,18 @@ export class ReviewsComponent implements OnInit {
   negativeRelevancePercentage: number;
   controversialRelevancePercentage: number;
 
-   // constructor( protected reviewService: ReviewService) {}
+   constructor( ) {
+
+   }
 
   ngOnInit(): void {
 
     if ( !this.reviewService.reviewList ) {
       this.reviewService.getReviewList("L3cpFYNPYz8");
+      console.log(" list: " + JSON.stringify(this.reviewService.reviewList));
     }
 
-    this.reviewList = this.reviewService.reviewList;
+    this.reviewList = this.reviewService.fetchReviewList();
 
     this.positiveReviewList = this.reviewService.positiveReviewList;
     this.negativeReviewList = this.reviewService.negativeReviewList;
@@ -47,6 +48,11 @@ export class ReviewsComponent implements OnInit {
     this.positiveRelevancePercentage = this.reviewService.positiveRelevancePercentage;
     this.negativeRelevancePercentage = this.reviewService.negativeRelevancePercentage;
     this.controversialRelevancePercentage = this.reviewService.controversialRelevancePercentage;
+    console.log( "REVIEW LIST " + Array.from(this.reviewList).length);
+    console.log( "positive % " + this.positiveRelevancePercentage);
+    console.log( "negative % " + this.negativeRelevancePercentage);
+    console.log( "contro % " + this.controversialRelevancePercentage);
+
   }
 
 

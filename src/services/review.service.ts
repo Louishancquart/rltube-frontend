@@ -7,6 +7,9 @@ import {Review} from './data';
 import {Observable} from "rxjs/Observable";
 import 'rxjs/add/operator/map';
 import {current} from "codelyzer/util/syntaxKind";
+import {HttpClient} from "@angular/common/http";
+import {HttpResponse} from "selenium-webdriver/http";
+import {promise} from "selenium-webdriver";
 
 
 @Injectable()
@@ -41,6 +44,8 @@ export class ReviewService {
       return this._currentVideo;
     }
 
+
+
     set currentVideo(value: string) {
       console.log("video ID is now :" + value);
        this._currentVideo = value;
@@ -53,11 +58,15 @@ export class ReviewService {
         return Promise.reject(error.message || error);
     }
 
-    public getReview(): Promise<Review[]> {
+    public fetchReviewList(): Promise<Review[]> {
       return this.http.get(this.restUrl)
         .toPromise()
-        .then( response =>
-          response.json() as Review[])
+        // .then(response =>
+        //   response.json() as Review[])
+        .then(response => JSON.parse(JSON.stringify(response)))
+        .then(res =>   JSON.parse(res["_body"]) )
+        .then(res => res["L3cpFYNPYz8"] as Review[] )
+        // .then(res => console.log( "RESSSS:" + JSON.stringify(res["L3cpFYNPYz8"])))
         .catch(this.handleError);
     }
 
@@ -65,7 +74,7 @@ export class ReviewService {
       return this.http.get(this.restUrl + '/' + mediaUrl)
         .toPromise()
         .then( response =>
-          response.json() as Review[])
+          this.reviewList = response.json().data as Review[])
         .catch(this.handleError);
     }
 
@@ -99,6 +108,7 @@ export class ReviewService {
 
     this.getReviewsByReviewedMediaUrl(mediaUrl).then( reviews => {
       this.reviewList = reviews;
+      // console.log("REVIEW: " + reviews.length)
       this.updateLists();
     });
 
