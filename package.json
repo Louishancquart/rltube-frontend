@@ -12,9 +12,9 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "^lastest",
+    "@angular/animations": "lastest",
     "@angular/cdk": "latest",
-    "@angular/common": "^latest",
+    "@angular/common": "latest",
     "@angular/compiler": "latest",
     "@angular/core": "latest",
     "@angular/forms": "latest",
