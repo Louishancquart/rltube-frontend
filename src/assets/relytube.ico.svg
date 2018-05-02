@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.92.1 r15371"
+   width="32"
+   height="32"
+   viewBox="0 0 29.999998 30"
+   sodipodi:docname="relytube.ico.svg"
+   inkscape:export-filename="/home/m/WebstormProjects/rltube-frontend/src/assets/relytube.ico.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96">
+  <metadata
+     id="metadata8">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs6" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1366"
+     inkscape:window-height="718"
+     id="namedview4"
+     showgrid="false"
+     inkscape:zoom="4.72"
+     inkscape:cx="-12.883275"
+     inkscape:cy="-3.1180782"
+     inkscape:window-x="0"
+     inkscape:window-y="24"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     units="px"
+     width="16mm" />
+  <g
+     inkscape:groupmode="layer"
+     id="layer1"
+     inkscape:label="Layer 1"
+     transform="translate(0,-169.99998)">
+    <path
+       style="fill:#000000;stroke-width:0.13416469"
+       d="m 2.9922882,199.82024 c -0.037686,-0.1288 -0.086192,-1.33126 -0.107792,-2.67189 l -0.039272,-2.43753 -1.1749502,-0.0938 -1.17495004,-0.0938 -0.21255029,-0.36386 -0.21255008,-0.36399 v -7.80654 -7.80654 l 0.34462625,-0.40471 0.34462628,-0.4047 4.26787448,-0.05 4.2678739,-0.05 0.04127,-3.18046 0.04127,-3.18045 0.3223758,-0.42896 0.3223767,-0.42895 h 9.697705 9.697707 l 0.326148,0.43397 0.326146,0.43396 v 7.78342 7.78343 l -0.338998,0.3981 -0.339,0.3981 -1.048501,0.0564 -1.048502,0.0564 -0.04164,2.56006 -0.04164,2.56007 -0.243208,0.1166 -0.243208,0.1166 -2.205582,-2.73501 -2.205584,-2.73501 -0.73457,0.0582 -0.734572,0.0582 -0.04128,3.18047 -0.04128,3.18045 -0.322376,0.42897 -0.322376,0.42892 H 13.954638 7.7913438 l -2.171121,2.71889 -2.1711195,2.71879 H 3.2549572 3.0608092 Z m 17.5931478,-17.05926 0.0402,-4.44979 -0.304624,-0.38079 -0.304628,-0.38078 -5.285583,0.0494 -5.2855841,0.0494 -0.04517,3.84378 -0.04517,3.84378 0.167038,0.71711 0.167038,0.71711 0.4781291,0.26126 0.478129,0.26128 4.95,-0.0408 4.950001,-0.0408 z"
+       id="path3161"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="sscccccccccccccccccccccccccccccccccccccccccccsccccccccccccccc"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer3"
+     inkscape:label="Layer 3"
+     transform="translate(0,-169.99998)" />
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Layer 2"
+     transform="translate(0,-169.99998)">
+    <path
+       sodipodi:type="star"
+       style="fill:#00ffff;fill-rule:evenodd;stroke:#000000;stroke-width:0.23720087px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       id="path3165"
+       sodipodi:sides="3"
+       sodipodi:cx="27.705317"
+       sodipodi:cy="168.70512"
+       sodipodi:r1="5.1348119"
+       sodipodi:r2="2.5674057"
+       sodipodi:arg1="0"
+       sodipodi:arg2="1.0471976"
+       inkscape:flatsided="false"
+       inkscape:rounded="0"
+       inkscape:randomized="0"
+       d="m 32.840128,168.70512 -3.851109,2.22344 -3.851108,2.22344 0,-4.44688 0,-4.44687 3.851109,2.22344 z"
+       inkscape:transform-center-x="-0.67636342"
+       inkscape:transform-center-y="-1.1405347e-05"
+       transform="matrix(0.52688376,0,0,0.65861072,0.07022399,71.21037)"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+  </g>
+</svg>
