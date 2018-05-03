@@ -12,10 +12,11 @@ export class BodyComponent implements OnInit {
 
 
 
-  constructor( protected reviewService: ReviewService) {}
+  constructor( public reviewService: ReviewService) {}
 
   ngOnInit(): void {
     this.reviewService.getReviewList('L3cpFYNPYz8');
+    console.log("videos : " + this.videoList);
   }
 
 
