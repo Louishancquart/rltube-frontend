@@ -5,13 +5,14 @@
     </app-video-box>
     <br>
 
-    <app-reviews [reviewService]="this.reviewService">Reviews</app-reviews>
+    <app-reviews >Reviews</app-reviews>
     <br>
   </div>
   <div class="column is-4">
-    <app-videos-list *ngIf="videoList" class="mdl-grid" [videoList]="videoList" [reviewService]="this.reviewService"></app-videos-list>
+    <app-videos-list *ngIf="videoList" class="mdl-grid" [videoList]="videoList" ></app-videos-list>
   </div>
 </div>
+
 
 
 

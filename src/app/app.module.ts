@@ -36,7 +36,7 @@ import {VideosListComponent} from "./body/videos-list/videos-list.component";
     HttpModule,
     BrowserAnimationsModule,
     MatTabsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: [
     ReviewService,

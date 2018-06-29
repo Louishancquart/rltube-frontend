@@ -1,22 +1,17 @@
 import {Component, Input, OnInit} from "@angular/core";
 
-import "rxjs/add/operator/switchMap";
+// import "rxjs/add/operator/switchMap";
 import {Review} from "../../../services/data";
 import {ReviewService} from "../../../services/review.service";
-import {applySourceSpanToExpressionIfNeeded} from "@angular/compiler/src/output/output_ast";
-
 
 @Component({
     selector: 'app-reviews',
     templateUrl: 'reviews.component.html',
-    providers: [ ReviewService],
     styleUrls: ['reviews.component.css'],
 })
 
 
 export class ReviewsComponent implements OnInit {
-
-  @Input() reviewService;
 
   reviewList: Review[];
 
@@ -28,18 +23,20 @@ export class ReviewsComponent implements OnInit {
   negativeRelevancePercentage: number;
   controversialRelevancePercentage: number;
 
-   constructor( ) {
-
-   }
+   constructor( private reviewService: ReviewService ) { }
 
   ngOnInit(): void {
 
-    if ( !this.reviewService.reviewList ) {
-      this.reviewService.getReviewList("L3cpFYNPYz8");
-      console.log(" list: " + JSON.stringify(this.reviewService.reviewList));
-    }
+    console.log("INIT ");
+   this.reviewService.getReviewsByReviewedMediaUrl("L3cpFYNPYz8").then(res => {
+        this.reviewList = res as Review[];
 
-    this.reviewList = this.reviewService.fetchReviewList();
+      console.log(" list: " + this.reviewList.toString() );
+
+
+
+
+     // this.reviewList = this.reviewService.fetchReviewList();
 
     this.positiveReviewList = this.reviewService.positiveReviewList;
     this.negativeReviewList = this.reviewService.negativeReviewList;
@@ -48,12 +45,14 @@ export class ReviewsComponent implements OnInit {
     this.positiveRelevancePercentage = this.reviewService.positiveRelevancePercentage;
     this.negativeRelevancePercentage = this.reviewService.negativeRelevancePercentage;
     this.controversialRelevancePercentage = this.reviewService.controversialRelevancePercentage;
-    console.log( "REVIEW LIST " + Array.from(this.reviewList).length);
+
     console.log( "positive % " + this.positiveRelevancePercentage);
     console.log( "negative % " + this.negativeRelevancePercentage);
     console.log( "contro % " + this.controversialRelevancePercentage);
+  })
 
   }
+
 
 
 
@@ -71,11 +70,11 @@ export class ReviewsComponent implements OnInit {
         review.reviewedTimes = 1; // the new review is counted as reviewed already once by the contributor
         review.description = description;
 
-         const obj = { "review": review};
+         // const obj = { "review": review};
 
-        console.log(JSON.stringify(obj));
+        // console.log(JSON.stringify(obj));
 
-        this.reviewService.creates(obj);
+        this.reviewService.creates(review);
 
 
         // {
